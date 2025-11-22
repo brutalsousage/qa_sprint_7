@@ -2,7 +2,7 @@ import requests
 import random
 import string
 from datetime import datetime, timedelta
-from urls import BASE_URL, COURIER_URL
+from urls import COURIER_URL
 
 class Help:
     @staticmethod
@@ -23,7 +23,7 @@ class Help:
             "firstName": first_name
         }
 
-        response = requests.post(BASE_URL + COURIER_URL, json=payload)
+        response = requests.post(COURIER_URL, json=payload)
 
         if response.status_code == 201:
             return {
